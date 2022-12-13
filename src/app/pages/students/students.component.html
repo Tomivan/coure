@@ -3,4 +3,28 @@
         <h1>List of Students</h1>
         <app-button color="green" text="Add New" (btnClick)="addNew()"></app-button>
     </div>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Title</th>
+                <th>Phone Number</th>
+                <th>Email Address</th>
+                <th>Address</th>
+                <th>Date of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{student.firstName}}</td>
+                <td>{{student.lastName}}</td>
+                <td>{{student.title}}</td>
+                <td>{{student.phoneNumber}}</td>
+                <td>{{student.email}}</td>
+                <td>{{student.address}}</td>
+                <td>{{student.dateOfBirth}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
