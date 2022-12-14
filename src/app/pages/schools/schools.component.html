@@ -1,4 +1,9 @@
-<div class="header">
-    <h1>List of Schools</h1>
-    <app-button color="green" text="Add New" (btnClick)="addNew()"></app-button>
+<div class="container">
+    <div class="header">
+        <h1>List of Schools</h1>
+        <app-button color="green" text="Add New" (btnClick)="openModal()"></app-button>
+    </div>
+    <div class="list" *ngFor="let school of schools">
+        <p>{{school.name}}</p>
+    </div>
 </div>

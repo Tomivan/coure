@@ -1,7 +1,7 @@
 <div class="container">
     <div class="header">
         <h1>List of Students</h1>
-        <app-button color="green" text="Add New" (btnClick)="addNew()"></app-button>
+        <app-button color="green" text="Add New" (btnClick)="openModal()"></app-button>
     </div>
     <table>
         <thead>
@@ -13,6 +13,8 @@
                 <th>Email Address</th>
                 <th>Address</th>
                 <th>Date of Birth</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +26,8 @@
                 <td>{{student.email}}</td>
                 <td>{{student.address}}</td>
                 <td>{{student.dateOfBirth}}</td>
+                <td><app-button color="blue" text="Edit" (btnClick)="openEditModal()" onclick=""></app-button></td>
+                <td><app-button color="red" text="Delete" (btnClick)="openDeleteModal(currentStudent=student)"></app-button></td>
             </tr>
         </tbody>
     </table>

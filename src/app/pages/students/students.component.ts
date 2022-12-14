@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from "../../services/student.service";
+import { MdbModalRef, MdbModalService} from 'mdb-angular-ui-kit/modal';
+import { AddComponent } from "../../modals/students/add/add.component";
+import { EditComponent } from 'src/app/modals/students/edit/edit.component';
+import { DeleteComponent } from 'src/app/modals/students/delete/delete.component';
 import { Student } from '../../student';
 
 @Component({
@@ -9,7 +13,9 @@ import { Student } from '../../student';
 })
 export class StudentsComponent implements OnInit {
   students: Student[] = [];
-  constructor(private studentService: StudentService) { }
+  currentStudent: Student;
+  modalRef: MdbModalRef<AddComponent> | null = null;
+  constructor(private studentService: StudentService, private modalService: MdbModalService) { }
 
   ngOnInit(): void {
     this.studentService.getStudents().subscribe((students) => {
@@ -17,8 +23,13 @@ export class StudentsComponent implements OnInit {
       console.log(this.students);
     });
   }
-
-  addNew() {
-    console.log("created!")
+  openModal() {
+    this.modalRef = this.modalService.open(AddComponent)
+  }
+  openEditModal() {
+    this.modalRef = this.modalService.open(EditComponent)
+  }
+  openDeleteModal(currentStudent: any) {
+    this.modalRef = this.modalService.open(DeleteComponent)
   }
 }
