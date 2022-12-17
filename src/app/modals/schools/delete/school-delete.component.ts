@@ -3,13 +3,13 @@ import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { Student } from 'src/app/student';
 
 @Component({
-  selector: 'app-delete',
-  templateUrl: './delete.component.html',
-  styleUrls: ['./delete.component.scss']
+  selector: 'app-school-delete',
+  templateUrl: './school-delete.component.html',
+  styleUrls: ['./school-delete.component.scss']
 })
-export class DeleteComponent implements OnInit {
+export class SchoolDeleteComponent implements OnInit {
   student:Student;
-  constructor(public modalRef: MdbModalRef<DeleteComponent>) { }
+  constructor(public modalRef: MdbModalRef<SchoolDeleteComponent>) { }
 
   ngOnInit(): void {
   }

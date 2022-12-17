@@ -1,1 +1,33 @@
-<p>edit works!</p>
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Edit Student</h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modalRef.close()"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <label for="firstName">First Name</label>
+      <input type="text" name="firstName" id="firstName" [(ngModel)]="firstName" placeholder="First Name"/>
+      <label>Last Name</label>
+      <input type="text" name="lastName" id="lastName" [(ngModel)]="lastName" placeholder="Last Name"/>
+      <label>Title</label>
+      <input type="text" name="title" id="title" [(ngModel)]="title" placeholder="Title"/>
+      <label>Phone Number</label>
+      <input type="tel" name="phoneNumber" id="phoneNumber" [(ngModel)]="phoneNumber" placeholder="Phone Number"/>
+      <label>Email</label>
+      <input type="email" name="email" id="email" [(ngModel)]="email" placeholder="Email"/>
+      <label> Address</label>
+      <input type="text" name="address" id="address" [(ngModel)]="address" placeholder="Address"/>
+      <label>Date of Birth</label>
+      <input type="date" name="dateOfBirth" id="dateOfBirth" [(ngModel)]="dateOfBirth" placeholder="Date of Birth"/>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+      Close
+    </button>
+    <button type="button" class="btn btn-primary" (click)="editStudent()">Edit</button>
+</div>

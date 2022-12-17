@@ -7,6 +7,13 @@ import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
   styleUrls: ['./add.component.scss']
 })
 export class AddComponent implements OnInit {
+  firstName: string;
+  lastName: string;
+  title: string;
+  phoneNumber: string;
+  email: string;
+  address: string;
+  dateOfBirth: string;
 
   constructor(public modalRef: MdbModalRef<AddComponent>) {}
 

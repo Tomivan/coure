@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddComponent } from './modals/students/add/add.component';
 import { DeleteComponent } from './modals/students/delete/delete.component';
 import { EditComponent } from './modals/students/edit/edit.component';
+import { SchoolAddComponent } from './modals/schools/add/school-add.component';
+import { SchoolDeleteComponent } from './modals/schools/delete/school-delete.component';
+import { SchoolEditComponent } from './modals/schools/edit/school-edit.component';
+import { DepartmentAddComponent } from './modals/departments/add/department-add.component';
+import { DepartmentEditComponent } from './modals/departments/edit/department-edit.component';
+import { DepartmentDeleteComponent } from './modals/departments/delete/department-delete.component';
 
 @NgModule({
   declarations: [
@@ -37,12 +44,19 @@ import { EditComponent } from './modals/students/edit/edit.component';
     ButtonComponent,
     AddComponent,
     DeleteComponent,
-    EditComponent
+    EditComponent,
+    SchoolAddComponent,
+    SchoolDeleteComponent,
+    SchoolEditComponent,
+    DepartmentAddComponent,
+    DepartmentEditComponent,
+    DepartmentDeleteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     MdbAccordionModule,
     MdbCarouselModule,
     MdbCheckboxModule,

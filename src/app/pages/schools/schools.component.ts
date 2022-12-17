@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SchoolService } from 'src/app/services/schools.service';
-import { AddComponent } from 'src/app/modals/schools/add/add.component';
+import { AddComponent } from 'src/app/modals/schools/add/school-add.component';
 import { EditComponent } from 'src/app/modals/schools/edit/edit.component';
 import { DeleteComponent } from 'src/app/modals/schools/delete/delete.component';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
@@ -18,9 +18,8 @@ export class SchoolsComponent implements OnInit {
   constructor(private schoolService: SchoolService, private modalService: MdbModalService) { }
 
   ngOnInit(): void {
-    this.schoolService.getStudents().subscribe((schools) => {
+    this.schoolService.getSchools().subscribe((schools) => {
       this.schools = schools;
-      console.log(this.schools);
     });
   }
 

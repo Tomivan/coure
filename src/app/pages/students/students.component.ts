@@ -13,14 +13,12 @@ import { Student } from '../../student';
 })
 export class StudentsComponent implements OnInit {
   students: Student[] = [];
-  currentStudent: Student;
   modalRef: MdbModalRef<AddComponent> | null = null;
   constructor(private studentService: StudentService, private modalService: MdbModalService) { }
 
   ngOnInit(): void {
     this.studentService.getStudents().subscribe((students) => {
       this.students = students;
-      console.log(this.students);
     });
   }
   openModal() {
@@ -29,7 +27,7 @@ export class StudentsComponent implements OnInit {
   openEditModal() {
     this.modalRef = this.modalService.open(EditComponent)
   }
-  openDeleteModal(currentStudent: any) {
+  openDeleteModal() {
     this.modalRef = this.modalService.open(DeleteComponent)
   }
 }
